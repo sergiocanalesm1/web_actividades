@@ -21,6 +21,7 @@ class Characters extends Component {
                     name:res.data.data.results[i].name,
                     description : res.data.data.results[i].description,
                     path: p,
+                    likes:0,
                 };
                 characters.push(character);
             }
@@ -36,7 +37,7 @@ class Characters extends Component {
 
             
             <Accordion>
-            {this.state.characters.map((e,i) => <Character key={i} character={e} />)}
+                {this.state.characters.map((e,i) => <Character key={i} character={e} />)}
             </Accordion>
             
         )
