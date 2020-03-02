@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Character from "./Character";
 import axios from "axios";
+import Accordion from 'react-bootstrap/Accordion';
 
 class Characters extends Component {
 
@@ -11,11 +12,12 @@ class Characters extends Component {
             let characters = []
             //console.log(res.data.length);
             for(let i = 0; i<res.data.data.results.length;i++){
-                console.log(i);
+                
                 let temp_path = res.data.data.results[i].thumbnail.path;
                 let extension = res.data.data.results[i].thumbnail.extension;
                 let p = `${temp_path}.${extension}`;
                 let character = {
+                    pk : res.data.data.results[i].id,
                     name:res.data.data.results[i].name,
                     description : res.data.data.results[i].description,
                     path: p,
@@ -24,24 +26,20 @@ class Characters extends Component {
             }
             this.setState({ characters })
         });
-        /*
-        fetch("/characters").then(res => {
-            return res.json();
-        }).then(characters => {
-            console.log(characters);
-            this.setState({ characters });
-        })
-        */
+        
     }
     state = {
         "characters" : []
     };
     render() {
         return (
-            <div>
-                {this.state.characters.map((e,i) => <Character key={i} character={e} />)}
-            </div>
-        );
+
+            
+            <Accordion>
+            {this.state.characters.map((e,i) => <Character key={i} character={e} />)}
+            </Accordion>
+            
+        )
     }
 }
 
