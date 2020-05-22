@@ -1,0 +1,11 @@
+{
+    "banner": "Películas",
+    "name": "Nombre",
+    "director":"Dirijida por",
+    "country": "País",
+    "budget": "Presupuesto",
+    "release":"lanzamiento",
+    "views": "Visitas",
+    "million-s":" millón",
+    "million-p":" millones"
+}
