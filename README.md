@@ -1,2 +1,2 @@
 # web_actividades
-Repository for javascript, html and css practices
+React.js, Javascript, HTML and CSS practice repository
